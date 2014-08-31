@@ -1,0 +1,64 @@
+startup_message off
+
+term xterm-256color
+defscrollback 1024
+hardstatus on
+hardstatus alwayslastline
+
+#hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}% w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+#escape ^aa
+escape ^za
+
+screen -t local 0 bash
+screen -t remote 1 bash
+screen -t chert 2 bash
+screen -t workspace 3 bash
+screen -t sites 4 bash
+screen -t google 20 $BROWSER http://www.google.com
+#screen -t sh120 4 bash
+#screen -t sh220_CLI 5 bash
+#screen -t sh220 6 bash
+#screen -t gen-vcs1 7 bash
+#screen -t gen-vcs5 8 bash
+select 0
+
+#attrcolor b ".I"    # allow bold colors - necessary for some reason
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'   # tell screen how to set colors. AB = background, AF=foreground
+defbce on    # use current bg color for erased chars
+
+
+
+
+#hardstatus off
+#hardstatus alwayslastline
+#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W} %c %{g}]'
+#hardstatus alwayslastline '%{= G}[ %{G}%H %{g}][%= %{= w}%?%-Lw%?%{= R}%n*%f %t%?%{= R}(%u)%?%{= w}%+Lw%?%= %{= g}][ %{y}Load: %l %{g}][%{B}%Y-%m-%d %{W}%c:%s %{g}]'
+
+
+
+#awesome screen hardstatus 
+#backtick 1 5 5 true
+#termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;\007'
+#hardstatus string "screen (%n: %t)"
+#caption string "%{= kw}%Y-%m-%d;%c %{= kw}%-Lw%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+Lw%1`"
+#caption always
+#
+
+altscreen on #When you open a text editor like nano in screen and then close it, the text may stay visible in your terminal. To fix this, put the following: 
+
+
+#caption always # activates window caption
+#caption string '%{= wk}[ %{k}%H %{k}][%= %{= wk}%?%-Lw%?%{r}(%{r}%n*%f%t%?(%u)%?%{r})%{k}%?%+Lw%?%?%= %{k}][%{b} %d/%m %{k}]'
+#caption string '%{= wk}[ %{k}%H %{k}][%= %{= wk}%?%-Lw%?%{r}(%{r}%n*%f%t%?(%u)%?%{r})%{k}%?%+Lw%?%?%= %{k}][%{b} %d/%m %{k}%c %{k}]' # good looking window bar
+#
+
+shell -$SHELL
+#shell -bash
+defscrollback 999
+
+bindkey -k k5 prev # F5 for previous window
+bindkey -k k6 next # F6 for next window
+
