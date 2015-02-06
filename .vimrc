@@ -4,9 +4,9 @@ set sw=4
 
 syntax on
 
-"colorscheme dante
+colorscheme dante
 " colorscheme herald
-colorscheme molokai
+"colorscheme molokai
 
 
 set nocompatible               " be iMproved
@@ -23,9 +23,9 @@ set nocompatible               " be iMproved
  "
  " original repos on github
  "Bundle 'tpope/vim-fugitive'
- Bundle 'Lokaltog/vim-easymotion'
+ " Bundle 'Lokaltog/vim-easymotion'
  Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- Bundle 'tpope/vim-rails.git'
+ " Bundle 'tpope/vim-rails.git'
  " vim-scripts repos
  Bundle 'L9'
  Bundle 'FuzzyFinder'
@@ -34,14 +34,14 @@ set nocompatible               " be iMproved
  Bundle 'altercation/vim-colors-solarized' 
  Bundle 'https://github.com/tpope/vim-fugitive'
  "Bundle 'joonty/vim-phpqa.git'
- Bundle 'Syntastic'
+ " Bundle 'Syntastic'
  Bundle 'jistr/vim-nerdtree-tabs'
  "Plugin 'scrooloose/nerdtree'
  " Bundle 'shawncplus/phpcomplete.vim'
  " ...
 
  filetype plugin indent on     " required! 
- ":BundleInstall
+" :BundleInstall
  "
  " Brief help
  " :BundleList          - list configured bundles
@@ -100,8 +100,8 @@ set showcmd
 set showtabline=2
 
 " Format JSON data
-map <C-F6> :%!python -m json.tool<CR>
-set omnifunc=csscomplete#CompleteCSS
+" map <C-F6> :%!python -m json.tool<CR>
+" set omnifunc=csscomplete#CompleteCSS
 
 "set colorcolumn=120
 
@@ -127,7 +127,8 @@ nnoremap <F6> :sbnext<CR>
 nnoremap <F5> :sbprevious<CR>
 
 
-set guifont=Inconsolata\ for\ Powerline:h15
+"set guifont=Inconsolata\ for\ Powerline:h15
+set guifont=PowerlineSymbols:h15
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
 set t_Co=256
@@ -143,3 +144,24 @@ if has("gui_running")
     endif
 endif
 
+"let g:jedi#auto_initialization = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#use_splits_not_buffers = "left"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+"let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
+let g:jedi#show_call_signatures = "1"
+
+
+let g:jellybeans_overrides = {
+            \    'Todo': { 'guifg': '303030', 'guibg': 'f0f000',
+            \              'ctermfg': 'Black', 'ctermbg': 'Yellow',
+            \              'attr': 'bold' },
+            \}
+
+if has("mouse")
+    "set mouse=a
+endif
