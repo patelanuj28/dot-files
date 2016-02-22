@@ -1,0 +1,37 @@
+bing() {
+  /Users/anujp/workspace/bing_rewards/anuj_p.py 
+  /Users/anujp/workspace/bing_rewards/anujp28.py 
+  /Users/anujp/workspace/bing_rewards/anujp2810.py 
+  /Users/anujp/workspace/bing_rewards/patelanuj28.py 
+  /Users/anujp/workspace/bing_rewards/patel_anuj28.py 
+  /Users/anujp/workspace/bing_rewards/monikapatel28.py 
+  /Users/anujp/workspace/bing_rewards/patelmonika28.py 
+  /Users/anujp/workspace/bing_rewards/patelmonika12.py 
+  /Users/anujp/workspace/bing_rewards/patelmonika13.py 
+  /Users/anujp/workspace/bing_rewards/patelmonika14.py
+}
+parse_git_branch() {
+
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+
+}
+
+genpasswd() {
+    local l=$1
+    [ "$l" == "" ] && l=8
+    LC_CTYPE=C tr -dc A-Za-z0-9_\! < /dev/urandom | head -c ${l} | xargs
+}
+
+fp(){
+    fping -s -g $*
+}
+
+transfer() { curl --upload-file ./$1 https://transfer.sh/$1; }
+alias transfer=transfer
+
+
+upload_xmp_key() {
+  sshpass -pDesktone1 /usr/bin/scp ~/.ssh/xmp_ova.pub desktone@$1:~/.ssh/
+  ssh desktone@$1 "cat ~/.ssh/xmp_ova.pub >> ~/.ssh/authorized_keys"
+# sshpass -pDesktone1 `/usr/bin/ssh desktone@$1 "cat ~/.ssh/xmp_ova.pub >> ~/.ssh/authorized_keys"`
+}
