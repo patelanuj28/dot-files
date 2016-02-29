@@ -1,0 +1,21 @@
+
+. ~/.zsh/prompt # prompt config
+. ~/.zsh/options # zsh options
+. ~/.zsh/completion # tab completion config
+. ~/.zsh/aliases # shell aliases
+. ~/.zsh/git # git aliases
+. ~/.zsh/ruby # ruby env vars and version management
+
+# Env vars
+if [ $(uname -s) = 'Darwin' ]; then
+  export LANG="en_AU.UTF-8"
+  export EDITOR='subl -n -w'
+  export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/X11/bin"
+  export MANPATH="/usr/local/share/man:/usr/X11/man:/usr/share/man"
+else
+  export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
+fi
+
+# Misc
+export HOMEBREW_BUILD_FROM_SOURCE=true # Disable the use of bottles.
+export HOMEBREW_MAKE_JOBS=2 # The detected number of cores (probably 4 virtual cores) makes the system unresponsive.
